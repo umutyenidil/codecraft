@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap');
+
+:root {
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Atkinson Hyperlegible Mono", sans-serif;
+}
+
+.countdown-container {
+    position: relative;
+}
+
+.countdown-container #pause-button {
+    position: absolute;
+    z-index: -1;
+
+    width: 128px;
+    height: 128px;
+
+    background-color: rgb(226, 232, 240);
+
+    appearance: none;
+    border: none;
+    border-radius: 50%;
+
+    font-size: 64px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
+
+.countdown-container #timer {
+    width: 128px;
+    height: 128px;
+
+    background-color: rgb(0, 166, 244);
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 48px;
+    font-weight: 500;
+}
+
+/*.cnt-countdown {*/
+/*    display: flex;*/
+/*}*/
+
+/*.cnt-countdown .btn-pause {*/
+/*    width: 128px;*/
+/*    height: 128px;*/
+
+/*    appearance: none;*/
+/*    border: none;*/
+/*    border-radius: 50%;*/
+/*    outline: none;*/
+
+/*    cursor: pointer;*/
+/*}*/
+
+/*.cnt-countdown .btn-pause i {*/
+/*    font-size: 48px;*/
+/*    font-weight: 500;*/
+/*}*/
+
+/*.timer-container {*/
+/*    width: 128px;*/
+/*    height: 128px;*/
+/*    background-color: red;*/
+/*    border-radius: 50%;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.timer-container p {*/
+/*    color: #ffffff;*/
+/*    font-size: 48px;*/
+/*    font-weight: 500;*/
+/*}*/
+
+/*.timer-container.heartbeat {*/
+/*    animation: heartbeat 1s 1 ease-in-out;*/
+/*}*/
+
+/*@keyframes heartbeat {*/
+/*    0% {*/
+/*        transform: scale(1);*/
+/*    }*/
+
+/*    50% {*/
+/*        transform: scale(1.25);*/
+/*    }*/
+
+/*    100% {*/
+/*        transform: scale(1);*/
+/*    }*/
+/*}*/
