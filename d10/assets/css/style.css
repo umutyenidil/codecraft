@@ -40,6 +40,8 @@ body {
     cursor: pointer;
 
     transition: box-shadow 0.2s ease;
+
+    overflow: hidden;
 }
 
 .container .product-grid .product-grid__item a .product-card:hover {
