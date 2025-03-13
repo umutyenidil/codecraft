@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+.ins-api-users {
+    width: 80%;
+
+    margin: 128px auto;
+
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 16px;
+}
+
+.ins-api-user {
+    position: relative;
+
+    background-color: oklch(0.871 0.006 286.286);
+    aspect-ratio: 4/5;
+
+    padding: 8px;
+
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+}
+
+.ins-api-user .header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ins-api-user .header img {
+    width: 80%;
+    aspect-ratio: 1/1;
+
+    border-radius: 50%;
+    background-color: white;
+}
+
+.ins-api-user .body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ins-api-user .body .body-header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+
+.ins-api-user .body .body-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.ins-api-user .body .body-header .name {
+    font-size: 18px;
+    font-weight: 600;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ins-api-user .body .body-header .email {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.ins-api-user .body .remove-btn {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 8px;
+
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ins-api-user .body .remove-btn:hover {
+    background-color: red;
+    color: white;
+}
+
+@media (min-width: 576px) {
+    .ins-api-users {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .ins-api-users {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .ins-api-users {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .ins-api-users {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
