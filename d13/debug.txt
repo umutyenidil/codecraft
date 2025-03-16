@@ -1,0 +1,20 @@
+ilk olarak arayuzdeki fonksiyonaliyeti kontrol ettim.
+sepete ekleme, sepetten silme fonksiyonlarindan bir sorun gorunmuyor.
+derken stok sayilarindan fazla sepete ekleme yapilabildigini fark ettim.
+sepete ekleme fonksiyonuna bir debugger koyup kod akisini inceledim ve sorunu tespit ettim.
+index.js:32 satirinda ile bu sorunu cozdum.
+
+sepet toplami da urunlerin adetleri ile carpilmadan 1 urun uzerinden hesaplaniyor. yani sepete 5 telefon atinca da sepet tutarinda 1 telefon fiyati gorunuyor.
+sepet tutarini hesaplayan fonksiyona bir debugger koyarak akisi inceledim.
+index.js:81 satirinda item.quantity ile carpim yapip sorunu giderdim.
+
+indirimi uygulamak icin kodu inceledim ve bir adet kupon gordum.
+kupon bir kere kullanilabiliyor, burada bir sorun yok fakat sepet tutari indirim oranina dusuyor, indirim orani kadar dusmuyor.
+yani 10% indirim yapilirken fiyatin 10%u sepet tutari oluyor, normalde 90% olmali.
+indirimin uygulandigi fonksiyona gidip bir debugger koydum.
+index.js:85 satiri ile bu sorunu da cozdum.
+
+sepete urun ekleyip sildim, daha sonra fark ettim ki ayni urunu sepete eklemeye calistigimda stok degeri 1 artti.
+index.js:64 satirinda sepete eklenen adet kadar stogun geri urune eklenmesini sagladim. bu islemden sonra urunler tekrar render edilmedigi icin productCard daki stok sayisi guncellenmedi.
+urun stoklarinin sepetten silme isleminden sonra tekrar goruntulenmesi icin
+index.js:70 satirinda productlarin tekrar render edilmesini sagladim.
