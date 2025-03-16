@@ -27,7 +27,7 @@ export const cachedData = (url) => {
             return null;
         }
 
-        return data;
+        return {data,expiry};
     } catch (e) {
         return null;
     }

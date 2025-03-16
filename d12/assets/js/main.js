@@ -1,4 +1,5 @@
 import {fetcher} from "./fetcher.js";
+import {cacheData, cachedData} from "./cache.js";
 
 const addInsApiUser = (data) => {
     document.querySelector(".ins-api-users").innerHTML = document.querySelector(".ins-api-users").innerHTML + ` 
@@ -26,12 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
         onPending: (pending) => {
             console.log(pending);
         },
-        onData: (users) => {
+        onData: ({data: users}) => {
             for (const user of users) {
                 addInsApiUser(user);
             }
         },
-        onCacheData: (users) => {
+        onCacheData: ({data: users}) => {
             for (const user of users) {
                 addInsApiUser(user);
             }
@@ -43,7 +44,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.addEventListener("click", ({target}) => {
         if (target.classList.contains("remove-btn")) {
-            console.log(target.closest(".ins-api-user").dataset.id); // kaldirilacak element idsi
+            const dataId = target.closest(".ins-api-user").dataset.id; // kaldirilacak element idsi
+
+            let {data: users, expiry} = cachedData("https://jsonplaceholder.typicode.com/users");
+            users = users.filter(i => i.id != dataId);
+            cacheData("https://jsonplaceholder.typicode.com/users", users, expiry / 6000);
 
             target.closest(".ins-api-user").remove();
         }
